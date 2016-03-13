@@ -1,10 +1,11 @@
 class InstructorsController < ApplicationController
+	skip_before_filter :authorize
   before_action :set_instructor, only: [:show, :edit, :update, :destroy]
 
   # GET /instructors
   # GET /instructors.json
   def index
-    @instructors = Instructor.all
+    @instructors = Instructor.order(:last_name)
   end
 
   # GET /instructors/1

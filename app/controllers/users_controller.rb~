@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
+	#skip_before_filter :authorize
+	before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
   def index
-  	@current_user = current_user.id
     @users = User.order(:name)
   end
 
