@@ -1,0 +1,25 @@
+require 'rubygems'
+require 'json'
+
+class JsonFiles
+	def courseJson
+		json = File.read('course.json')
+		course = JSON.parse(json)[0]
+		p course["name"]
+		#return course
+	end
+	
+	def instructorJson
+		json = File.read('instructor.json')
+		instructor = JSON.parse(json)[0]
+		p instructor["first"]
+		#return instructor
+	end
+	
+	def subjectJson
+		json = File.read('subject.json')
+		subject = JSON.parse(json)[1]
+		p subject["name"]
+		#return subject
+	end
+end
