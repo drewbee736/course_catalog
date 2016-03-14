@@ -20,12 +20,11 @@
   </thead>
 
   <tbody>
-   	<!--<% @users.each do |user| %>-->
+   	<% @users.each do |user| %>
    		<tr>
-      	<!--<td><%= user.name %></td>-->
-      	<td><%= User.find(session[:user_id]) if session[:user_id] %></td>
+      	<td><%= user.name %></td>
     	</tr>
-   <!-- <% end %>-->
+    <% end %>
   </tbody>
 </table>
 
