@@ -1,5 +1,5 @@
 class InstructorsController < ApplicationController
-	skip_before_filter :authorize
+	before_filter :authenticate
   before_action :set_instructor, only: [:show, :edit, :update, :destroy]
 
   # GET /instructors
