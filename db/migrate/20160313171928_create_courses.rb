@@ -6,7 +6,6 @@ class CreateCourses < ActiveRecord::Migration
    	end
    
     create_table :courses do |t|
-      t.belongs_to :subject, index: true
       t.string :name
       t.timestamps
     end

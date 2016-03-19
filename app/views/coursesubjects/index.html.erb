@@ -1,0 +1,23 @@
+<h1>Listing coursesubjects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coursesubjects.each do |coursesubject| %>
+      <tr>
+        <td><%= link_to 'Show', coursesubject %></td>
+        <td><%= link_to 'Edit', edit_coursesubject_path(coursesubject) %></td>
+        <td><%= link_to 'Destroy', coursesubject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coursesubject', new_coursesubject_path %>

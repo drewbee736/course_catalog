@@ -25,6 +25,6 @@ instructor = JSON.parse(instructor_json)
 #course = JsonFiles.courseJson
 #instructor = JsonFiles.instructorJson
 
-(0..subject.length-1).each {|i| Subject.create(name: subject[i]["name"])}
+(0..subject.length-1).each {|i| Subject.create(name: subject[i]["name"], id: subject[i]["id"])}
 (0..course.length-1).each {|i| Course.create(name: course[i]["name"])}
 (0..instructor.length-1).each {|i| Instructor.create(first_name: instructor[i]["first"], last_name: instructor[i]["last"])}
