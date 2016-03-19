@@ -2,6 +2,7 @@
 <%= link_to 'Subjects', subjects_path %>
 <%= link_to 'Courses', courses_path %>
 <%= link_to 'Instructors', instructors_path %>
+<%= link_to 'Search', enrollments_path %>
 <%= link_to 'Log Out', sessions_destroy_url %>
 
 <h1>Listing users</h1>
@@ -20,9 +21,10 @@
   </thead>
 
   <tbody>
-   	<% @users.each do |user| %>
+   	<% User.current_user.each do |user| %>
    		<tr>
       	<td><%= user.name %></td>
+      	<td><%= link_to 'Currently Enrolled Courses', user %></td>
     	</tr>
     <% end %>
   </tbody>

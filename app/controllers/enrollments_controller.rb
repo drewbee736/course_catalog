@@ -6,6 +6,11 @@ class EnrollmentsController < ApplicationController
   # GET /enrollments.json
   def index
     @enrollments = Enrollment.all
+    if params[:search]
+    	@courses = Course.search(params[:search]).order("created_at DESC")
+    else
+    	@courses = Course.all.order('created_at DESC')
+    end
   end
 
   # GET /enrollments/1

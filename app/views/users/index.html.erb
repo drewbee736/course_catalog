@@ -21,11 +21,10 @@
   </thead>
 
   <tbody>
-   	<% @users.each do |user| %>
-   		<tr>
-      	<td><%= user.name %></td>
-    	</tr>
-    <% end %>
+  	<tr>
+  		<td> <%= User.current_user.name %></td>
+  		<td> <%= link_to 'Currently Enrolled Courses', User.current_user %></td>
+  	</tr>
   </tbody>
 </table>
 
